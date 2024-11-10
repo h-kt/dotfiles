@@ -1,0 +1,8 @@
+[Unit]
+Description=Reload Blue Light Filter Service
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=sh -c "systemctl kill -s HUP --user sunset.service "
+

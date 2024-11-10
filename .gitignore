@@ -7,3 +7,5 @@ db.zo
 fish_variables
 types
 Fonts
+Hypr/.config/hypr/colors.conf
+Services/.config/systemd/user/sunsetReload.timer

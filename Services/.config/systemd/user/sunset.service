@@ -1,0 +1,14 @@
+[Unit]
+Description=Blue Light Filter Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=sh -c "zsh ${HOME}/.local/share/bin/hyprsunset.sh '49.8954N' '97.1385W'"
+Restart=always
+RestartSec=3s
+
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=graphical-session.target

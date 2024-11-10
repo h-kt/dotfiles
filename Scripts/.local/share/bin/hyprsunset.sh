@@ -6,20 +6,7 @@
 LAT=$1
 LNG=$2
 
-SUNRISE=$(sunwait list sunrise ${LAT} ${LNG})
-SUNSET=$(sunwait list sunset ${LAT} ${LNG})
+DAYNIGHT=$(sunwait poll civil ${LAT} ${LNG})
 
-RH=$(echo ${SUNRISE} | cut -d':' -f1)
-RM=$(echo ${SUNRISE} | cut -d':' -f2)
+[[ $DAYNIGHT == "DAY" ]] && hyprsunset -i || hyprsunset -t 4000
 
-SH=$(echo ${SUNET} | cut -d':' -f1)
-SM=$(echo ${SUNSET} | cut -d':' -f2)
-
-HH=$(date +%H)
-MM=$(date +%M)
-
-if [[ $HH -gt $SR && $MM -gt $SM ]]; then
-	hyprsunset -i
-else
-	hyprsunset -t 4200
-fi

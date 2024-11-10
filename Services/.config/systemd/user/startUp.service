@@ -1,0 +1,11 @@
+[Unit]
+Description=Startup Service
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=sh -c "zsh $HOME/.local/share/bin/startUp.sh"
+
+[Install]
+WantedBy=graphical-session.target
+

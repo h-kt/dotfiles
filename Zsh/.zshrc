@@ -2,6 +2,8 @@ if [[ -f "/opt/homebrew/bin/brew" ]] then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+. ${HOME}/.profile
+
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -55,6 +57,7 @@ zstyle ':fzf-tab:complete:z:*' fzf-preview 'eza -a -1 --color=always $realpath'
 alias ls='eza --classify=always --colour=always --icons=always'
 alias vim='nvim'
 alias c='clear'
+alias neofetch='fastfetch -l arch_small -c paleofetch.jsonc'
 
 (cat ~/.cache/wal/sequences &)
 eval "$(oh-my-posh init zsh --config ~/.local/share/omp/zen.toml)"

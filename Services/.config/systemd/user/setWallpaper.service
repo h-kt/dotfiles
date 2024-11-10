@@ -2,12 +2,9 @@
 Description=Set Wallpaper Periodically
 
 [Service]
-ExecStart=sh -c "echo Hi >> /tmp/Hi"
+Type=oneshot
+ExecStart=sh -c "zsh $HOME/.local/share/bin/setWallpaper.sh ${HOME}/.profile"
 
 Restart=on-failure
 RestartSec=30s
 
-Type=oneshot
-
-[Install]
-WantedBy=graphical-session.target
