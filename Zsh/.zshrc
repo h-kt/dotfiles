@@ -62,3 +62,4 @@ alias neofetch='fastfetch -l arch_small -c paleofetch.jsonc'
 (cat ~/.cache/wal/sequences &)
 eval "$(oh-my-posh init zsh --config ~/.local/share/omp/zen.toml)"
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(direnv hook zsh)"

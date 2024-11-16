@@ -1,12 +1,15 @@
 #!/usr/bin/env sh
 
-[[ $(whereis hyprsunset | cut -d':' -f2) ]] || exit 1
-[[ $(whereis sunwait | cut -d':' -f2) ]] || exit 1
+[ -f "$(whereis hyprsunset | cut -d':' -f2 | cut -d' ' -f2)" ] || exit 1
+[ -f "$(whereis sunwait | cut -d':' -f2 | cut -d' ' -f2)" ] || exit 1
 
-LAT=$1
-LNG=$2
+. "${HOME}"/.profile
 
-DAYNIGHT=$(sunwait poll civil ${LAT} ${LNG})
+DAYNIGHT="$(sunwait poll civil "${LAT}" "${LNG}")"
 
-[[ $DAYNIGHT == "DAY" ]] && hyprsunset -i || hyprsunset -t 4000
+if [ "$DAYNIGHT" = "DAY" ]; then
+	hyprsunset -i
+else
+	hyprsunset -t 4000
+fi
 

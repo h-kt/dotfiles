@@ -3,8 +3,5 @@ Description=Set Wallpaper Periodically
 
 [Service]
 Type=oneshot
-ExecStart=sh -c "zsh $HOME/.local/share/bin/setWallpaper.sh ${HOME}/.profile"
-
-Restart=on-failure
-RestartSec=30s
+ExecStart=sh -c "dash $HOME/.local/share/bin/setWallpaper.sh"
 

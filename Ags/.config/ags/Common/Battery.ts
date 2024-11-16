@@ -5,17 +5,21 @@ const BatteryLabel = () => {
   const icon = battery
     .bind("percent")
     .as((p) => `battery-level-${Math.floor(p / 10) * 10}-symbolic`);
+  const label = battery.bind("percent").as((p) => p.toString() + '%');
+  const charging = battery.bind("charging").as((charging) => charging ? `` : '');
 
   return Widget.Box({
     class_name: "battery",
     visible: battery.bind("available"),
     children: [
+      Widget.Label({ label, css: 'margin: 0px 3px;' }),
       Widget.Icon({ icon }),
-      Widget.LevelBar({
-        widthRequest: 140,
-        vpack: "center",
-        value,
-      }),
+      Widget.Label({ label: charging, css: 'margin: 0px 3px;' }),
+      // Widget.LevelBar({
+      //   widthRequest: 20,
+      //   vpack: "center",
+      //   value,
+      // }),
     ],
   });
 };

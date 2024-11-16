@@ -4,5 +4,5 @@ After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=sh -c "systemctl kill -s HUP --user sunset.service "
+ExecStart=sh -c "dash ${HOME}/.local/share/bin/sunsetReload.sh"
 

@@ -1,8 +1,12 @@
 #!/usr/bin/env sh
 
-. ${HOME}/.profile
+. "${HOME}"/.profile
 
 mkReloadService.sh
 mkWallpaperSerice.sh
 
-echo STARTED > /tmp/STARTED
+systemctl status --user refreshWallpaper.timer
+systemctl status --user setWallpaper.service
+systemctl status --user sunset.service
+systemctl status --user sunsetReload.timer
+

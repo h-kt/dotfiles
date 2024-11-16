@@ -13,8 +13,8 @@ const Volume = () => {
     const icon = audio.speaker.is_muted
       ? 0
       : [101, 67, 34, 1, 0].find(
-          (threshold) => threshold <= audio.speaker.volume * 100
-        ) ?? 34;
+        (threshold) => threshold <= audio.speaker.volume * 100
+      ) ?? 34;
 
     return `audio-volume-${icons[icon]}-symbolic`;
   };
