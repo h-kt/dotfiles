@@ -7,33 +7,37 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "vim_mode": true,
-  "ui_font_size": 14,
-  "buffer_font_size": 14,
-  "buffer_font_family": "FantasqueSansM Nerd Font Mono",
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Catppuccin Mocha (Blur)"
-  },
-  "auto_signature_help": true,
-  "indent_guides": {
-    "enabled": true,
-    "coloring": "indent_aware",
-    "line_width": 1,
-    "active_line_width": 2
-  },
-  "relative_line_numbers": true,
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  },
-  "terminal": {
-    "shell": {
-      "program": "zsh"
+    "project_panel": {
+        "dock": "right"
     },
-    "env": {},
-    "dock": "right",
-    "default_width": 420
-  }
+    "vim_mode": true,
+    "ui_font_size": 14,
+    "buffer_font_size": 14,
+    "buffer_font_family": "FantasqueSansM Nerd Font Mono",
+    "theme": {
+        "mode": "system",
+        "light": "Catppuccin Latte",
+        "dark": "Catppuccin Mocha"
+    },
+    "auto_signature_help": true,
+    "indent_guides": {
+        "enabled": true,
+        "coloring": "indent_aware",
+        "line_width": 1,
+        "active_line_width": 2
+    },
+    "relative_line_numbers": true,
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false
+    },
+    "tab_size": 4,
+    "terminal": {
+        "shell": {
+            "program": "zsh"
+        },
+        "env": {},
+        "dock": "right",
+        "default_width": 420
+    }
 }
